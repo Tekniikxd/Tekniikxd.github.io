@@ -1,12 +1,13 @@
-div.top {
-    width: 100%;
-    position: fixed;
+body {
+  background-image: url('../images/background.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 header {
     width: 100%;
     height: 4em;
-    margin-top: -80px;
+    margin-top: 200px;
     font-size: 125%;
     background-image: url('../images/logo-edit.png');
     background-repeat: no-repeat;
@@ -18,56 +19,83 @@ nav, header {
     animation-duration: 5s;
 }
 
-nav {
-    width: 100%;
-    padding: 1em 0;
-    flex-direction: row !important;
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-nav a {
-  text-transform: uppercase;
+li {
+  list-style-type:  none;
+}
+
+li a {
+  display:flex;
+  text-align:center;
+}
+
+nav ul ul {
+    display: none;
+}
+
+nav ul li a {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   padding: 0 10px 0 10px;
   transition: 200ms all;
   letter-spacing: 1px;
+  min-width: 110px;
+  min-height: 50px;
+  align-items: center;
+  position: relative;
 }
 
-nav a i {
-  font-size: 1.5em;
+nav ul li a i {
+  font-size: 1.45em;
   padding-right: 5px;
-  transform: translateY(5px);
 }
 
 nav a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: orange;
 }
 
-
-.background img {
-  object-fit: cover;
-  opacity: 1;
+nav ul li:hover > ul {
+  display:block;
+  background-color:grey;
+  margin: 0;
+  padding: 0;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
-.videoOverlay {
+.body {
     background-color: rgba(0, 0, 0, 1);
     background-image: linear-gradient(0deg,
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.7));
-    animation-name: backgroundfadein;
+    animation-name: navigationfadein;
     animation-duration: 5s;
 }
 
-.videoOverlay h1{
-    opacity: 0;
-    animation-name: quotefadein;
-    animation-duration: 4s;
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
 }
 
-.emailContact
-{
+.emailContact {
     color: rgba(255,255,255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .emailContact hr
 {
@@ -75,59 +103,53 @@ nav a:hover {
     opacity: 0.3;
 }
 
-nav a:nth-child(1)::after
-{
-    content: "Twitch";
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
-nav a:nth-child(2)::after
-{
-    content: "Discord";
-}
-nav a:nth-child(3)::after
-{
-    content: "Twitter";
-}
-nav a:nth-child(4)::after
-{
-    content: "Spotify";
-}
-nav a:nth-child(5)::after
-{
-    content: "Youtube";
-}
-nav a:nth-child(6)::after
-{
-    content: "Vods";
-}
-nav a:nth-child(7)::after
-{
-    content: "Instagram";
-}
-nav a:nth-child(8)::after
-{
-    content: "Snapchat";
-}
-nav a:nth-child(9)::after
-{
-    content: "Tiktok";
-}
-
 
 @media (max-width: 800px) {
-    nav
+    nav ul
     {
-        flex-direction: column !important;
+        flex-direction: column;
+        align-items: center;
+        line-height: 5rem;
     }
 
-    nav a
-    {
-        padding: 0 10px 50px 10px;
+    .menu {
+      flex-direction:column;
+      justify-content:space-between;
     }
-    /* nav a::after
-    {
-        content: "";
-    } */
-    nav a i::before
+
+    nav ul ul {
+      display: none;
+      position:absolute;
+    }
+
+    nav ul li:hover > ul {
+      padding-left:0;
+      background:#777;
+    }
+
+    nav ul li:hover > ul a{
+      color:#fff;
+    }
+
+    .sub-menu {
+      li {
+      display:flex;
+      padding-right:2em;
+      }
+
+      li:hover, li a:hover{
+        background:#ddd;
+        color:#777;
+      }
+    }
+
+    nav ul a i::before
     {
         font-size: 100%;
     }
@@ -136,38 +158,5 @@ nav a:nth-child(9)::after
     {
         margin-top: 25px;
         margin-bottom: 10px;
-    }
-}
-
-/*@keyframes quotefadein {
-    0% {
-        opacity: 0;
-    }
-    25%{
-        opacity: 1;
-    }
-    75%{
-        opacity: 1;
-    }
-
-    100%{
-        opacity: 0;
-    }
-}*/
-@keyframes backgroundfadein {
-    0% {
-        opacity: 0;
-    }
-
-    100%{
-        opacity: 1;
-    }
-}
-@keyframes navigationfadein {
-    0% {
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }
