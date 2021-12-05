@@ -123,45 +123,23 @@ footer {
 
     .menu {
       flex-direction:column;
-      width: 85vw;
+      margin-left: -40px;
     }
 
     li {
       display: flex;
       justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      align-self: center;
     }
 
     nav ul ul {
       display: none;
-      position:absolute;
+      position: absolute;
     }
 
-    a {
-      max-width: 50px;
-    }
-
-    nav ul li:hover > ul {
-      padding-left:0;
-      background:#777;
-    }
-
-    nav ul li:hover > ul a{
-      color:#fff;
-    }
-
-    .sub-menu {
-      li {
-      display:flex;
-      padding-right:2em;
-      }
-
-      li:hover, li a:hover{
-        background:#ddd;
-        color:#777;
-      }
+    li a {
+      display: flex;
+      align-items:center;
+      justify-content:center;
     }
 
     nav ul a i::before
