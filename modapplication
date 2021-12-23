@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Refresh" content="0; url='https://youtu.be/dQw4w9WgXcQ'"/>
+    <title>Discord</title>
+    <link rel="icon" type="image/png" href="./src/images/logo-edit.png">
+  </head>
+  <body onload="openService()">
+            <p>You should've been redirected. You can close this page :)</p>
+      <script>
+        function openService(){
+            window.location.href = "https://youtu.be/dQw4w9WgXcQ";
+        }
+      </script>
+
+
+</body></html>
