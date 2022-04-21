@@ -10,15 +10,21 @@
 body {
   background-color: #333;
   overflow: auto;
+  font-family: "Norwester", "Open Sans Light", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 2.2rem;
+  -webkit-text-stroke: 1.5px white;
+  -webkit-text-fill-color: black;
 }
 
 .incident-container {
     display: grid;
     grid-auto-flow: row;
     grid-template-areas:
-      ". . ."
-      ". . ."
-      ". . .";
+      ". . . ."
+      ". . . ."
+      ". . . .";
 }
 
 .parent-container {
@@ -28,7 +34,13 @@ body {
   height: 98vh;
 }
 
-div > a {
+div {
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+}
+
+a {
   padding: 10px;
   background-color: #ccc;
   width: 18vw;
@@ -39,18 +51,22 @@ div > a {
   display:flex;
   justify-content:center;
   align-items:center;
-  font-family: "Norwester", "Open Sans Light", sans-serif;
-  text-decoration: none;
-  color: black;
-  font-size: 2.2rem;
-  -webkit-text-stroke: 1.5px white;
-  -webkit-text-fill-color: black;
   background-size: cover;
 
   border: 2px solid white;
   border-radius: 0.7rem;
   min-width: 180px;
   min-height: 120px;
+}
+
+.pack {
+  height: 400px;
+}
+
+.caption {
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  display: block;
 }
 
 [id='1'] {
@@ -144,6 +160,23 @@ div > a:hover {
   border-color: #FFFFFF;
   box-shadow: 0 0 12px rgba(255,255,255, 0.6);
 }
+
+[id='smp'] {
+  background-image: url("/src/images/packs/smp.jpeg");
+}
+
+[id='speedrunning'] {
+  background-image: url("/src/images/packs/tekniik.png");
+}
+
+[id='pvp'] {
+  background-image: url("/src/images/packs/pvp.png");
+}
+
+[id='old'] {
+  background-image: url("/src/images/packs/ocd.png");
+}
+
 
 @media all and (max-width: 1180px) {
   .incident-container {
